@@ -1,23 +1,31 @@
 # 👕 AI Wardrobe Stylist
-A deep learning project that recommends outfits by learning
-which clothes go together, trained on the Polyvore Outfits dataset.
+Recommends menswear outfits using deep learning, trained on outfits
+made by professional ASOS stylists.
 
-## How it works (planned)
-1. CLIP turns each clothing image into an embedding
-2. A neural network trained on 68k real outfits scores compatibility
-3. A web app suggests outfits from your own wardrobe photos
-
-## Progress
-- [x] Step 1: Project setup
-- [ ] Step 2: Explore the Polyvore dataset
-- [ ] Step 3: Generate CLIP embeddings
-- [ ] Step 4: Train the compatibility model
-- [ ] Step 5: Evaluate (AUC, fill-in-the-blank accuracy)
-- [ ] Step 6: Outfit generator + web app
-- [ ] Step 7: Deploy
-
-## Tech
-Python · PyTorch · CLIP · Google Colab · Gradio · Hugging Face
+## How it works
+1. **CLIP** turns each clothing photo into numbers (an embedding)
+2. A **neural network** learns which items go well together
+3. A **web app** suggests outfits from your own clothes
 
 ## Dataset
-[Polyvore Outfits](https://github.com/xthan/polyvore-dataset)
+**[ASOS Outfits](https://osf.io/cg6eq/?view_only=f446b0f51bca409da4175a4ce8d9000a)**,
+272k menswear outfits made by ASOS stylists
+([paper](https://arxiv.org/abs/1904.00741)).
+
+*Why not [Polyvore](https://github.com/xthan/polyvore-dataset)?*
+It's almost entirely womenswear (48 vs 1 gendered titles in a
+2,000-item sample, see `notebooks/01_explore_dataset.ipynb`).
+
+> ⚠️ ASOS image links currently return HTTP 503, under investigation.
+
+## Progress
+- [x] Project setup
+- [x] Dataset exploration → chose ASOS menswear
+- [ ] 🔄 Get ASOS images
+- [ ] Generate CLIP embeddings
+- [ ] Train compatibility model
+- [ ] Evaluate (AUC, fill-in-the-blank)
+- [ ] Web app + deploy
+
+## Tech
+Python · pandas · PyTorch · CLIP · Google Colab · Gradio · Hugging Face
